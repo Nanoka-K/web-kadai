@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ホラー映画</title>
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/script.js" defer></script>
+</head>
+
+<body>
+    <header>
+       <div class="navIcons">
+            <div class="iconWrapper">
+                <!-- ↑のdivにflex -->
+                <img src="./image/instagram_icon.png" alt="" class="snsIcon">
+                <img src="./image/x_icon.png" alt="" class="snsIcon">
+            </div>
+
+            <nav>
+                <!-- <img src="./image/hamburger.png" alt="" class="icon"> -->
+                <!-- 仮配置 -->
+                <!-- ハンバーガーメニューはcssでつくる -->
+                 <!-- <div class="logo">FarStep</div> -->
+                    <div class="hamburger-menu">
+                        <div class="hamburger-icon" onclick="toggleMenu()">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        </div>
+                        <div class="menu-links">
+                        <ul>
+                            <li><a href="#news" onclick="toggleMenu()">NEWS</a></li>
+                            <li><a href="#story" onclick="toggleMenu()">STORY</a></li>
+                            <li><a href="#cast" onclick="toggleMenu()">CAST</a></li>
+                            <li><a href="#staff" onclick="toggleMenu()">STAFF</a></li>
+                            <li><a href="#theater" onclick="toggleMenu()">THEATER</a></li>
+                            <!-- ページ内リンク→飛ばしたいところにidとして入れる -->
+                        </ul>
+                        </div>
+                    </div>
+            </nav>
+       </div>
+        
+        <div class="headerImage glitch-area">
+            <img src="./image/longhairWoman.png" alt="" class="mainImage">
+            <h1 class="headerMainText glitch">ふりかえったら、いる</h1>
+            <!-- ↑widthの設定で正しく１行で表示 -->
+            <h2 class="headerTextCommon headerTextPosition">その気配に、</h2>
+            <h2 class="headerTextCommon headerSecondLineTextPosition">気づいたら終わり</h2>
+            <p class="headerDateCommon headerDate">12.28 FRI</p>
+            <p class="headerDateCommon headerRoad">ROADSHOW</p>
+        </div>
+
+    </header>
+    <div class="mainContent">
+    <div class="newsSection">
+        <h2 class="newsTitle" id="news">NEWS</h2>
+
+        <div class="newsContentsCommon">
+            <dl>
+            <dt>【2024.12.03】</dt>
+            <dd>公開日が12月28日（金）に決定！あわせて最新のメインビジュアルを公開しました。</dd>
+            </dl>
+
+            <!-- dl→定義リスト -->
+            <dl>
+                <dt>【2025.02.05】</dt>
+                <dd>本作がダークムーン映画祭に正式出品されました。</dd>
+
+            </dl>
+
+            <dl>
+                <dt>【2025.03.01】</dt>
+                <dd>E-NUXTにて本作の「メイキング特典 映像付きパック」を配信開始！</dd>
+            </dl>
+        </div>
+        
+    </div>
+
+    <div>
+        <h2 class="sectionDecoration ruleTitle">ルール</h2>
+        <!-- <img src="./kaubnsyoneruP1010168_TP_V4 1.png" alt=""> -->
+        <img src="./image/kaibunsyo.jpg" alt="" class="ruleImage">
+        <!-- 右側の余白を消す→画像の横幅指定 -->
+        <p class="ruleText">
+            「決して振り返らないこと」
+            <br>
+            「気配を感じても、無視すること」
+            <br>
+            「一度でも“目が合う”と、<span class="ruleEmphasis">逃れられない</span> 」
+        </p>
+    </div>
+
+    <div class="storySection">
+        <h2 class="sectionDecoration" id="story">STORY</h2>
+        <!-- <img src="./YUKISDIM3392_TP_V4 1.png" alt=""> -->
+        <img src="./image/tunnel.jpg" alt="" class="storyImage">
+        <p class="storyText">
+            大学生の結月（ゆづき）は、友人たちと「黒見（くろみ）トンネル」へ肝試しに向かう。そこにはある噂があった。「トンネルの中で、絶対にふりかえってはいけない。  　もしふりかえったら、“そこ”にいるから。」
+            最初はただの怖い話だと笑い飛ばしていた彼女たちだったが、その翌日から、仲間がひとりずつ失踪していく。
+            ──
+            やがて結月は、かつてトンネルで起きた未解決の失踪事件にたどり着く。そこには、絶対に「ふりかえってはいけない」理由があった…。
+        </p>
+        <div class="horrorAtmosphere">
+            <img src="./image/rectangleRed26.png" alt="" >
+                <div class="horrorTextCommon">
+                    <p id="textOne">肩を掴む</p>
+                    <p id="textTwo">遠い出口</p>
+                    <p id="textThree">息を吸う気配が背後で</p>
+                    <p id="textFour">笑い声の反響</p>
+                    <p id="textFive">立ち尽くす女</p>
+                    <p id="textSix">戻ってはいけない道</p>
+                 </div>
+        </div>
+        
+        
+    </div>
+
+    <div class="castSection">
+        <h2 class="sectionDecoration castTitle" id="cast">CAST</h2>
+        <img src="./image/castImage1.png" alt="" class="castWoman">
+        <!-- <img src="./image/redblood.png" alt="" class="backGroundCast"> -->
+        <div class="castIntroduction">
+            <p class="castWomanText castWomanName">夜凪 由良</p>
+            <p class="castWomanText castWomanRoman">Yura Yonagi</p>
+            <p class="castWomanIntroduction">「最初に脚本を読んだとき、怖さよりも、登場人物たちの抱えている感情の重さが印象に残りました。  撮影では、説明しすぎず、観る方に委ねる演出が多く、ひとつひとつの場面を丁寧に積み重ねていく感覚がありました。 
+            ホラーが得意な方にも、そうでない方にも、それぞれの受け取り方で楽しんでいただけたらうれしいです。」</p>
+        </div>
+        
+
+        <div class="castMan">
+            <img src="./image/castImage2.png" alt="">
+        </div>
+        <p class="castManText castManName">神代 透</p>
+        <p class="castManText castManRoman">Toru Kamishiro</p>
+        <p class="castManIntroduction">「ホラー作品に参加するのは初めてでしたが、驚かせることよりも、登場人物の関係性を丁寧に描く現場だと感じました。 
+            限られた場所での撮影が多く、緊張感のある時間が続きましたが、その空気感がそのまま画面に映っていると思います。」</p>
+    </div>
+
+    <div class="staff wrapper">
+        <h2 class="sectionDecoration">STAFF</h2>
+           <!-- hidden用のdiv -->
+            <div  class="staffList">
+                <div id="staffImage">
+                    <img src="./image/director.png" alt="" class="rotateRight">
+                    <img src="./image/script.png" alt="" class="rotateLeft">
+                    <img src="./image/art.png" alt="" class="rotateRight">
+                    <img src="./image/music.png" alt="" class="rotateLeft">
+                </div>   
+            </div>
+    </div>
+
+    <div class="wrapper">
+        <h2 class="sectionDecoration" id="theater">THEATER</h2>
+        <table>
+            <tr>
+                <th>
+                    【東京】
+                </th>
+                <td>
+                    TOHOシネマズ新宿、シネマスイッチ銀座
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    【大阪】
+                </th>
+                <td>
+                    梅田ブルク7
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    【名古屋】
+                </th>
+                <td>
+                    ミッドランドスクエアシネマ
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    【福岡】
+                </th>
+                <td>
+                    T・ジョイ博多
+                </td>
+            </tr>
+        </table>
+    </div>
+    </div>
+    <footer>
+        <div class="produceCommon wrapper">
+            <p class="production">
+                製作　モノクローム・プロダクションズ
+            </p>
+            
+            <p class="distribution">
+                配給　ペガサスシネマ・ディストリビューション
+            </p>
+            <small class="productioncommittee">&copy;2025 映画『ふりかえったら、いる』製作委員会</small>
+        </div>
+        
+
+        <div>
+            <div class="footerWarning wrapper">
+                <img src="./image/icon_warning_red.png" alt="" class="warningImage">
+                <h2 class="Warning">注意</h2>
+                <img src="./image/icon_warning_red.png" alt="" class="warningImage">
+            </div>
+            
+            <div id="WarningTextSection wrapper">
+                <p class="WarningText">
+                     トンネルが閉まります。
+                     名前を呼ばれても振り返らないようご注意ください。
+                </p>
+            </div>
+            
+            <div class="footerHorror">
+                <!-- <img src="./image/redblood.png" alt="">
+                <img src="./image/redblood.png" alt=""> -->
+                
+                <p>
+                    <span class="footerTextOne">
+                        こ
+                    </span>
+                    <span class="footerTextTwo">
+                        っ
+                    </span>
+                    <span class="footerTextThree">
+                        ち 
+                    </span>
+                    <span class="footerTextFour">
+                        に
+                    </span>
+                    <span class="footerTextFive">
+                        お
+                    </span>
+                    <span class="footerTextSix">
+                        い
+                    </span>
+                    <span class="footerTextSeven">
+                        で
+                    </span>
+                </p>
+                
+               
+                <img src="./image/knifeWoman.png" alt="">
+            </div>
+            
+        </div>
+    </footer>
+
+
+</body>
+
+</html>

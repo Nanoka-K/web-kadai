@@ -1,0 +1,897 @@
+@charset "UTF-8";
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body{
+    font-size: 1rem;
+    background-color: #2c2b2b;
+    color: aliceblue;
+}
+
+header{
+    /* padding-bottom: 175px; */
+    position: relative;
+}
+
+.wrapper{
+    padding: 0px 20px;
+}
+
+.mainContent{
+    width: 100%;
+}
+
+h1{
+    text-align: center;
+}
+
+.snsIcon{
+    /* text-align: right; */
+    /* margin-left: 40px; */
+    width: 35px;
+}
+
+.navIcons{
+    position: absolute;
+    top: 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    gap: 21px;
+    left: 193px;
+    z-index: 999;
+}
+
+.menuIcon{
+  width: 40px;
+  height: 30px;
+  position: fixed; /* ← fixedにして常に左上固定 */
+  top: 20px;
+  left: 20px;
+  cursor: pointer;
+  z-index: 3;
+  display: inline-block;
+}
+
+.ruleImage{
+  width: 100%;  
+}
+
+.iconWrapper{
+    display: flex;
+    gap: 21px;
+}
+
+#hamburger-nav {
+  display: none;
+}
+
+.hamburger-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 35px;
+  width: 35px;
+  cursor: pointer;
+  position: relative;
+  z-index: 1001;
+}
+
+.hamburger-icon span {
+  width: 100%;
+  height: 2px;
+  background-color: aliceblue;
+}
+
+.menu-links {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100vh;
+  background-color: aliceblue;
+  z-index: 1000;
+}
+
+.menu-links ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  list-style: none;
+}
+
+.menu-links a {
+  font-size: 2rem;
+  color: black;
+  text-decoration: none;
+}
+
+.menu-links li {
+  list-style: none;
+  margin: 20px 0;
+}
+
+.menu-links.open {
+  max-height: 100vh;
+  right: 0;
+}
+
+.hamburger-icon span:first-child {
+  transform: none;
+}
+
+.hamburger-icon span:first-child {
+  opacity: 1;
+}
+
+.hamburger-icon span:first-child {
+  transform: none;
+}
+
+.hamburger-icon.open span:first-child {
+  transform: rotate(45deg) translate(10px, 5px);
+}
+
+.hamburger-icon.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-icon.open span:last-child {
+  transform: rotate(-45deg) translate(10px, -5px);
+}
+
+body.no-scroll {
+  overflow: hidden;
+}
+
+.mainImage{
+    position: absolute;
+    top: -8px;
+    max-width: 100%;
+    height: auto;
+}
+
+.headerMainText{
+    position: absolute;
+    /* ↓左右を中央に寄せて、topで高さ調整 */
+    top: 155px;
+    left: 50%;
+    transform: translateX(-50%);
+    rotate: 9.08deg;
+    width: 340px;
+    color: #f70d34;
+    font-family: "HOT-Kointaikk";
+    font-weight: lighter;
+}
+
+
+.headerImage{
+     position: relative;
+     padding-top: 100px;
+}
+
+
+.headerTextCommon{
+    color: #f70d34;
+    font-family: "HOT-Kointaikk";
+    font-weight: lighter;
+    position: absolute;
+    transform: translateX(-50%);
+    width: 25px;
+    
+}
+
+.headerTextPosition{
+    top: 290px;
+    left: 19%;
+}
+
+.headerSecondLineTextPosition{
+    top: 344px;
+    left: 8%;
+}
+
+.headerDateCommon{
+    position: absolute;
+    padding: 5px 50px 2px 175px ;
+    font-size: 1.4rem;
+    font-family: "HOT-Kointaikk";
+    font-weight: lighter
+}
+
+.headerDate{
+    top: 340px;
+}
+
+.headerRoad{
+    top: 395px;
+}
+
+/*↓グリッチの処理282行目まで*/
+
+.glitch-area{
+  position:relative;
+}
+
+/* 文字 */
+.glitch{
+  position:relative;
+}
+
+/* 赤・青のズレ */
+.glitch::before,
+.glitch::after{
+  content:attr(data-text);
+  position:absolute;
+  top:0;
+  left:0;
+}
+
+/* 赤 */
+.glitch::before{
+  color:red;
+  transform:translate(-2px,0);
+  opacity:.7;
+}
+
+/* 青 */
+.glitch::after{
+  color:cyan;
+  transform:translate(2px,0);
+  opacity:.7;
+}
+
+/* ノイズ（超軽量） */
+.glitch-area::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+
+  background:repeating-linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.03),
+    rgba(255,255,255,0.03) 1px,
+    transparent 2px
+  );
+
+  animation:noise .3s infinite;
+  opacity:.15;
+}
+
+@keyframes noise{
+  0%{ transform:translateY(0); }
+  100%{ transform:translateY(2px); }
+}
+
+/* たまにだけ揺れる */
+.glitch{
+  animation:flicker 3s infinite;
+}
+
+@keyframes flicker{
+  0%, 95%, 100%{ opacity:1; }
+  96%{ opacity:.6; }
+  97%{ opacity:1; }
+  98%{ opacity:.4; }
+  99%{ opacity:1; }
+}
+
+.newsTitle{
+    color: #f70d34;
+    font-family: "HOT-Kointaikk";
+    font-weight: lighter;
+    text-align: center;
+    padding-bottom: 100px;
+    padding-top: 530px;
+}
+
+.newsSection{
+    padding-bottom: 100px;
+}
+
+.sectionDecoration{
+    color: #f70d34;
+    font-family: "HOT-Kointaikk";
+    font-weight: lighter;
+    text-align: center;
+    padding-bottom: 100px;
+    padding-top: 100px;
+}
+
+.newsContentsCommon{
+    margin: 0 auto;
+    width: 287px;
+}
+
+.newsContentsCommon dd{
+    padding: 30px 0px;
+    width: 280px;
+    /* margin-right: 40px; */
+    margin-left: 7px;
+}
+
+.ruleTitle{
+    position: absolute;
+    top: 1245px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 130px;
+}
+
+.ruleText{
+    font-family: "HOT-Kointaikk";
+    position: absolute;
+    bottom: -860px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 308px;
+    line-height: 1.8;
+}
+
+.ruleEmphasis{
+    color: #f70d34;
+}
+
+.storyImage{
+    filter: brightness(0.7);
+    width: 100%;
+    height: 511.67px;
+}
+
+.storySection{
+    position: relative;
+}
+
+.storyText{
+    position: absolute;
+    top: 275px;
+    font-family: "Noto Serif JP";
+    line-height: 2.4;
+    padding: 0px 6px;
+}
+
+.horrorAtmosphere{
+    position: relative;
+}
+
+.horrorAtmosphere img{
+    max-width: 100%;
+    height: auto;
+}
+
+#textOne{
+    font-family: "HOT-Kointaikk";
+    position: absolute;
+    top: 32px;
+    rotate: 180deg;
+}
+#textTwo{
+    font-family: "HOT-Kointaikk";
+    position: absolute;
+    top: 50px;
+    right: 145px;
+    rotate: -22.74deg;
+}
+#textThree{
+    font-family: "HOT-Kointaikk";
+    position: absolute;
+    top: 145px;
+}
+#textFour{
+    font-family: "HOT-Kointaikk";
+    position: absolute;
+    top: 145px;
+    right: 69px;
+    rotate: 64.91deg;
+}
+#textFive{
+    font-family: "HOT-Kointaikk";
+    position: absolute;
+    top: 225px;
+    right: 150px;
+    rotate: 166.02deg;
+}
+#textSix{
+    font-family: "HOT-Kointaikk";
+    position: absolute;
+    top: 271px;
+    right: 0px;
+    transform: scaleX(-1);
+    /* ↑反転 */
+}
+
+.castSection{
+    background-image:linear-gradient(rgba(44, 43, 43,0.8),rgba(44, 43, 43,0.8)), url(../image/redbloodkari.png);
+    /* linear-gradient →グラデーション*/
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* background-repeat: repeat-y;
+    background-size: contain;
+    background-position: center;
+    width: 100%;
+    height: 100%; */
+    position: relative;
+}
+
+.castWoman{
+    padding-left: 10px;
+} 
+.castMan{
+    text-align: right; 
+    padding-right: 10px;
+}
+
+.castWomanText{
+    text-align: right; 
+    padding-right: 10px;
+    font-family: "Noto Serif JP";
+}
+
+.castWomanName{
+    font-size: 2rem;
+}
+
+.castWomanRoman{
+    font-size: 1.3rem;
+    font-weight: lighter;
+}
+
+.castWomanIntroduction{
+    padding: 35px 10px;
+    font-family: "Noto Sans JP";
+    line-height: 2.4;
+}
+
+.castManText{
+    text-align: left; 
+    padding-left: 10px;
+    font-family: "Noto Serif JP";
+}
+
+.castManName{
+    font-size: 2rem;
+}
+
+.castManRoman{
+    font-size: 1.3rem;
+    font-weight: lighter;
+}
+
+.castManIntroduction{
+    padding: 35px 10px;
+    font-family: "Noto Sans JP";
+    line-height: 2.4;
+}
+table{
+    border-collapse: collapse;
+    /* ↑表の二重線消した */
+    background-image: url(../image/horrorRed.jpg);
+    background-size: cover;
+    text-align: center;
+}
+
+th{
+    border: 1px solid aliceblue;
+    padding: 12px 0px;
+}
+
+td{
+    border: 1px solid aliceblue;
+    /* border-left: none; */
+}
+
+.staff{
+    position: relative;
+    text-align: center;
+}
+
+.staffList{
+    overflow: hidden;
+    width: 370px;
+}
+
+#staffImage{
+    display: flex;
+}
+
+/* .arrow {
+  width: 20px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.arrow.open {
+  transform: rotate(90deg); /* 横 → 下 */
+/* }
+
+.hidden {
+  display: none;
+} */ */
+
+#rightButton{
+    position: absolute;
+    left: 321px;
+    bottom: 292px;
+}
+
+.produceCommon{
+    text-align: center;
+    font-family: "Noto Sans JP";
+    padding-bottom: 325px
+}
+
+.production{
+    padding-top: 100px;
+}
+
+.distribution{
+    padding-top: 34px;
+    width: 351px;
+}
+
+.productioncommittee{
+    display: inline-block;
+    margin-top: 34px;
+    margin-bottom: 100px;
+}
+
+.footerWarning{
+    display: flex;
+    font-family: "HOT-Kointaikk";
+    color: #ba1a1a;
+    justify-content: center;
+    gap: 90px;
+    align-items: flex-end;
+}
+
+.footerWarning img{
+    padding-top: 14px;
+}
+
+.warningImage{
+    width: 32px;
+    height: 40px;
+    object-fit: cover;
+}
+
+.Warning{
+    font-weight: lighter;
+    /* font-size: 1.3rem; */
+    letter-spacing: 0.8rem;
+    margin-right: -0.8rem;
+    overflow: hidden;
+    /* ↑はみ出た分を隠す */
+}
+
+.WarningText{
+    color: #ba1a1a;
+    font-family: "HOT-Kointaikk";
+    margin: 29px 37px 100px;
+    font-size: 1.5rem;
+    line-height: 3.2;
+    width: 320px;
+}
+
+/* #WarningTextSection{
+    text-align: center;
+} */
+
+.footerHorror{
+    background-image:linear-gradient(rgba(44, 43, 43,0.8),rgba(44, 43, 43,0.8)), url(../image/redbloodkari.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 1410px;
+    position: relative;
+}
+
+.footerHorror img{
+    padding: 920px 0px 0px;
+    max-width: 100%;
+    height: auto;
+}
+
+.footerHorror span{
+    font-family: "Noto Sans JP";
+    font-weight: lighter;
+    position: absolute;
+    transform: translate(-50%,-50%);
+}
+
+.footerTextOne{
+    /* width: 25px; */
+    /* left: 50px;
+    top: 762px;
+    position: absolute; */
+    left: 15%;
+    top: 40%;
+}
+
+.footerTextTwo{
+    /* left: 66px;
+    top: 796px;
+    position: absolute; */
+    left: 25%;
+    top: 55%;
+}
+
+.footerTextThree{
+    /* left: 74px;
+    top: 870px;
+    position: absolute; */
+    left: 40%;
+    top: 45%;
+}
+
+.footerTextFour{
+    /* left: 143px;
+    top: 853px;
+    position: absolute; */
+    left: 55%;
+    top: 60%;
+}
+
+.footerTextFive{
+    /* left: 185px;
+    top: 870px;
+    position: absolute; */
+    left: 65%;
+    top: 42%;
+}
+
+.footerTextSix{
+    /* left: 209px;
+    top: 838px;
+    position: absolute; */
+    left: 75%;
+    top: 55%;
+}
+
+.footerTextSeven{
+    /* left: 287px;
+    top: 926px;
+    position: absolute; */
+    left: 85%;
+    top: 48%;
+}
+
+/* レスポンシブ */
+
+ @media(min-width: 800px) {
+ #desktop-nav {
+   display: none;
+ }
+ #hamburger-nav {
+   display: flex;
+ }
+ #experience,
+ .experience-details-container {
+   margin-top: 2rem;
+ }
+ #profile,
+ .section-container {
+   display: block;
+ }
+ .arrow {
+   display: none;
+ }
+ section,
+ .section-container {
+   height: fit-content;
+ }
+ section {
+   margin: 0 5%;
+ }
+ .section__pic-container {
+   width: 275px;
+   height: 275px;
+   margin: 0 auto 2rem;
+ }
+ .about-containers {
+   margin-top: 0;
+ }
+
+ .mainImage{
+    width: 100%;
+    height: 1025px;
+    padding-bottom: 55px;
+ }
+ .horrorAtmosphere img{
+    width: 100%;
+    height: 300px;
+ }
+ .hamburger-icon{
+    width: 55px;
+    height: 55px;
+ }
+ .snsIcon{
+    width: 55px;
+ }
+ .navIcons{
+    left: 1000px;
+ }
+ .headerMainText{
+    font-size: 2.5rem;
+    width: 400px;
+ }
+ .headerDateCommon{
+    left: 790px;
+    font-size: 1.4rem;
+ }
+ .headerDate{
+    top: 500px;
+ }
+
+ .headerRoad{
+    top: 555px;
+ }
+ .headerTextPosition{
+    top: 327px;
+ }
+ .headerSecondLineTextPosition{
+    top: 432px;
+    left: 167px;
+ }
+ .newsTitle{
+    padding-top: 1035px;
+    font-size: 1.7rem;
+  }
+ 
+ .newsContentsCommon{
+    margin: 0 auto;
+    width: fit-content;
+    display: flex;
+    gap: 100px;
+}
+
+dl{
+    border-right: 1px solid #eee;
+    padding-right: 35px;
+}
+ 
+ .sectionDecoration{
+    padding-top: 185px;
+    font-size: 1.7rem;
+    padding-bottom: 185px;
+ }
+ .ruleTitle{
+    top: 1540px;
+    font-size: 1.9rem;
+ }
+ .ruleText{
+    bottom: -2210px;
+    line-height: 3.5;
+    font-size: 1.4rem;
+    width: 432px;
+ }
+ .storyText{
+    top: 448px;
+    padding: 0 470px;
+    line-height: 2.9;
+ }
+ #textTwo{
+    right: 88px;
+    right: 630px;
+ }
+ .horrorTextCommon{
+    font-size: 1.2rem;
+ }
+ #textFive{
+    right: 297px;
+ }
+ #textThree{
+    right: 1162px;
+ }
+ #textSix{
+    top: 246px;
+ }
+ #textFour{
+    left: 1055px;
+ }
+ .castWoman{
+    padding: 0 520px;
+ }
+ .castWomanText{
+    padding:0 415px;
+ }
+ .castWomanIntroduction{
+    padding: 0 415px;
+    line-height: 3.2;
+ }
+ .castMan{
+    padding: 0 415px;
+ }
+ .castManText{
+    padding: 0 415px;
+ }
+ .castManIntroduction{
+    padding: 0 415px;
+    line-height: 3.2;
+ }
+ #rightButton{
+    left: 820px;
+ }
+ .staffList{
+    overflow: visible;
+    width: 100%;
+ }
+ #staffImage{
+    display: grid;
+    grid-template-columns: repeat(2, 582px);
+    gap: 150px;
+    place-items: center;
+ }
+ .rotateRight{
+    rotate: 15deg;
+ }
+ .rotateLeft{
+    rotate: -15deg;
+ }
+ table{
+    margin: auto;
+    width: 500px;
+ }
+ .distribution{
+    width: auto;
+ }
+ #WarningTextSection{
+    text-align: center;
+ }
+ .WarningText{
+    overflow-wrap: break-word;
+    white-space: normal;
+    margin: 50px auto 100px;
+ }
+ .footerHorror{
+    text-align: center;
+ }
+ .footerHorror span{
+    font-family: "Noto Sans JP";
+    font-weight: lighter;
+    position: absolute;
+    transform: translate(-50%,-50%);
+ }
+ .footerTextOne{
+    left: 25%;
+    top: 30%;
+}
+
+.footerTextTwo{
+    left: 35%;
+    top: 50%;
+}
+
+.footerTextThree{
+    left: 50%;
+    top: 40%;
+}
+
+.footerTextFour{
+    left: 65%;
+    top: 55%;
+}
+
+.footerTextFive{
+    left: 75%;
+    top: 35%;
+}
+
+.footerTextSix{
+    left: 85%;
+    top: 50%;
+}
+
+.footerTextSeven{
+    left: 90%;
+    top: 45%;
+}
+.footerHorror img{
+    width: 35%;
+}
+} 
