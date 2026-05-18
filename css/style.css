@@ -578,6 +578,11 @@ td{
     width: 320px;
 }
 
+.blood{
+    color: #ba1a1a;
+  text-shadow: 0 0 5px darkred, 0 0 10px black;
+}
+
 /* #WarningTextSection{
     text-align: center;
 } */
