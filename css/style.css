@@ -385,7 +385,7 @@ body.no-scroll {
 #textFour{
     font-family: "HOT-Kointaikk";
     position: absolute;
-    top: 145px;
+    top: 99px;
     right: 69px;
     rotate: 64.91deg;
 }
@@ -792,7 +792,7 @@ dl{
     top: 246px;
  }
  #textFour{
-    left: 1055px;
+    right: 94px;
  }
  .castWoman{
     padding: 0 520px;
@@ -823,9 +823,10 @@ dl{
  }
  #staffImage{
     display: grid;
-    grid-template-columns: repeat(2, 582px);
+    grid-template-columns: repeat(2, 395px);
     gap: 150px;
     place-items: center;
+    justify-content: center;
  }
  .rotateRight{
     rotate: 15deg;
