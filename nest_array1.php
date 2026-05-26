@@ -1,0 +1,12 @@
+<?php
+    //連想配列（JavaでいうMap）の作成
+    //配列の要素が配列になっている
+    $people [] = ['name' => '佐藤','blood' => 'A'];
+    $people [] = ['name' => '田中','blood' => 'B'];
+    $people [] = ['name' => '加藤','blood' => 'O'];
+    var_dump($people);
+
+    //連想配列の取り出し
+    //配列名 [一次元目のキー(ここでいう0,1,2)] [二次元目のキー(ここでいうname,blood)]
+    echo '名前は'.$people[1]['name'].'血液型は'.$people[1]['blood'];
+?>
