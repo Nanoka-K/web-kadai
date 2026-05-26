@@ -10,7 +10,7 @@
     //配列名 [一次元目のキー(ここでいう0,1,2)] [二次元目のキー(ここでいうname,blood)]
     // echo '名前は'.$people[1]['name'].'血液型は'.$people[1]['blood'];
 
-    //$people_key←0,1,2の方 $person←イコールの
+    //$people_key←0,1,2の方 $person←イコールの右側
     foreach($people as $people_key => $person){
             // var_dump($people_key);
             // var_dump($person);
@@ -18,5 +18,6 @@
                 // var_dump($person_key);
                 var_dump($value);
             }
+            //()の中の考えかた→asの左の配列のkeyが=>の左側、valueが=>の右側
     }
 ?>
