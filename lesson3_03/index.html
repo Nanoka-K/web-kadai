@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- xssの対策 -->
+    <!-- xss→別のサイトに存在する悪意のあるスクリプトを自サイトで実行し、自サイトに訪れたユーザーに損害を与える -->
+    <form method="post" action="sample.php">
+    <input type="text" name="a">
+    <input type="submit" value="送信する">
+    </form>
+</body>
+</html>
