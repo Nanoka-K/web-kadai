@@ -1,4 +1,6 @@
 <?php
+    //require_once→ファイルの読み込み(基本読み込めなかったら止まってほしいのでrequir)
+    require_once 'function.php';
     //fopen関数→csvファイルを読み込むために必要
     //'パス','読み込みモード(p96)'
     //r→読み込み専用
@@ -35,12 +37,16 @@
     //while文でまとめて出力 p104
     while($row = fgetcsv($fp)){
         //preタグではさむと、きれいに整列する
-        echo '<pre>';
-        var_dump($row);
-        echo '</pre>';
+        // echo '<pre>';
+        // var_dump($row);
+        // echo '</pre>';
 
-        echo '<p>書籍名'.$row[0].'</p>';
-        echo '<p>著者名'.$row[4].'</p>';
-        echo '<p>発売日'.$row[3].'</p>';
+        // echo '<p>書籍名'.htmlspecialchars($row[0],ENT_QUOTES,'UTF-8').'</p>';
+        // echo '<p>著者名'.htmlspecialchars($row[4],ENT_QUOTES,'UTF-8').'</p>';
+        // echo '<p>発売日'.$row[3].'</p>';
+        
+        //上のhtmlspecialcharsをfunction.phpで作った関数str2htmlに変えた（処理は変わらない）
+        echo '<p>書籍名'.str2html($row[0]).'</p>';
+        echo '<p>著者名'.str2html($row[4]).'</p>';
     }
 ?>

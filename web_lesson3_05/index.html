@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>適正体重サンプル</title>
+</head>
+<!-- 適正体重の計算アプリ -->
+<!-- formは二つ作ると片方が送信されなくなるため、だめ -->
+<form action="weight1.php" method="post">
+    <!-- 身長のフォーム -->
+    <p>
+        <label>身長:</label>
+        <input type="text" name="height">m
+    </p>
+    <!-- 体重のフォーム -->
+    <p>
+        <label>体重:</label>
+        <input type="text" name="weight">kg
+    </p>
+    <p class="button">
+        <input type="submit" value="送信する">
+    </p>
+</form>
+</html>
