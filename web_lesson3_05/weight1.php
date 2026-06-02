@@ -1,4 +1,14 @@
-<?php
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- //タグを使っている以上はhtmlの中に入れる -->
+    <?php
+    require_once '../lesson3/function.php';
     //適正体重の計算プログラム（アプリ）
     //floatにキャストして、$_POSTで受け取る(身長)
     $height = (float)$_POST['height'];
@@ -26,5 +36,20 @@
         exit; 
     }
     //適正体重の計算
-     echo '適正体重は' . 22*$height*$height . 'kgです。';
+    $goal_weight = 22*$height*$height;
+
+    //適正体重との差異
+    $defference = abs($goal_weight - $weight);
+
+    //表示
+    // echo '<br>体重'.$weight.'kg</br>';
+    // echo '理想'.$goal_weight.'kg';
+    // echo '<br>後'.$defference.'kgで適正体重です。</br>';
+    
+    //関数str2htmlを使う（表示じゃなくて受け取ったときにサニタイジングしてもいい）
+    echo '<br>体重'.str2html($weight).'kg';
+    echo '<br>理想'.str2html($goal_weight).'kg';
+    echo '<br>後'.str2html($defference).'kgで適正体重です';
 ?>
+</body>
+</html>
